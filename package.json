@@ -1,0 +1,30 @@
+{
+  "name": "cmoncur.github.io",
+  "version": "3.0.0",
+  "description": "Cody Moncur's personal portfolio and blog",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CMoncur/cmoncur.github.io.git"
+  },
+  "keywords": [
+    "Cody",
+    "Moncur",
+    "portfolio",
+    "blog",
+    "website"
+  ],
+  "author": "Cody Moncur",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CMoncur/cmoncur.github.io/issues"
+  },
+  "homepage": "https://github.com/CMoncur/cmoncur.github.io#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-elm": "^0.7.2"
+  }
+}
