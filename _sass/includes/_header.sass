@@ -17,6 +17,23 @@ nav#header
     &.scrolled > div
         opacity: 1
 
+    > a,
+    > a:link,
+    > a:active,
+    > a:visited
+        color: $white
+        float: left
+        font-family: "Bebas Neue", sans-serif
+        font-size: 1.2em
+        letter-spacing: 0.2em
+        line-height: 60px
+        padding: 0 0 0 0.75em
+        text-decoration: none
+        transition: color 100ms
+
+    > a:hover
+        color: $text-light-gray
+
     > div
         background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4))
         height: 100%
@@ -28,24 +45,28 @@ nav#header
         width: 100%
         z-index: -1
 
-    a, a:link, a:active, a:visited
-        color: $white
-        float: left
-        font-family: "Bebas Neue", sans-serif
-        font-size: 1.2em
-        letter-spacing: 0.2em
-        line-height: 60px
-        padding: 0 0 0 0.75em
-        text-decoration: none
-        transition: color 100ms
-
-    a:hover
-        color: $text-light-gray
-
-    img
+    > img
         display: block
         float: left
         height: 60px
         pointer-events: none
         user-select: none
         width: 60px
+
+    aside
+        align-items: center
+        display: flex
+        float: right
+        height: 60px
+        justify-content: space-between
+        width: 100px
+
+        a, a:link, a:active, a:visited
+            display: block
+            height: 40px
+            text-decoration: none
+            width: 40px
+
+        img
+            height: 40px
+            width: 40px

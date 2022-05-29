@@ -2,5 +2,34 @@
 
 footer
     background-color: $dark-gray
-    height: 500px
+    padding: 2em 0
     width: 100%
+
+    a,
+    a:link,
+    a:active,
+    a:visited
+        color: $text-light-gray
+        display: block
+        font-family: "Open Sans", sans-serif
+        font-size: 0.6em
+        font-weight: 700
+        text-decoration: none
+        transition: color 100ms
+        padding: 0.5em 2em
+
+    a:hover
+        color: $white
+
+    nav#footer
+        align-items: flex-start
+        background-image: url("../img/logo.png")
+        background-position: 50% 0
+        background-repeat: no-repeat
+        background-size: 100px 100px
+        display: flex
+        justify-content: center
+        margin: 0 auto
+        max-width: $wide
+        padding: calc(100px + 1.5em) 0 2em 0
+        width: 80%
