@@ -15,8 +15,13 @@ section#index-content
     > aside:last-of-type
         width: 320px
 
-    iframe
-        height: 180px
-        margin: 1.5em 0 0 0
-        width: 320px
+@media (max-width: $standard)
+    section#index-content
+        display: block
 
+        > aside:first-of-type,
+        > aside:last-of-type
+            width: 100%
+
+        > aside:first-of-type
+            margin-bottom: 4em

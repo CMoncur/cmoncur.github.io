@@ -32,6 +32,7 @@ section#splash
 
     aside#banner-bottom-left
         background-image: url("../img/banner_bottom_left.png")
+        background-repeat: no-repeat
         background-size: 130px 100px
         bottom: -68px
         left: -63px
@@ -40,6 +41,7 @@ section#splash
 
     aside#banner-bottom-right
         background-image: url("../img/banner_bottom_right.png")
+        background-repeat: no-repeat
         background-size: 130px 100px
         bottom: -68px
         right: -63px
@@ -68,3 +70,33 @@ section#splash
         > h1
             max-width: 600px
             width: 100%
+
+@media (max-width: $standard)
+    section#splash
+        background-position: 95% 40%
+        background-size: 500px
+        height: 400px
+
+        aside#banner // Banner
+            background-size: 1px 60px
+            bottom: -50px
+            width: 100%
+
+            h1
+                line-height: 64px
+
+        aside#banner-bottom-left
+            background-size: 78px 60px
+            bottom: -79px
+            left: -38px
+            width: 78px
+
+        aside#banner-bottom-right
+            background-size: 78px 60px
+            bottom: -79px
+            right: -38px
+            width: 78px
+
+        aside#banner-shadow
+            bottom: -100px
+            height: 200px
