@@ -39,3 +39,21 @@ footer
         nav#footer
             background-size: 60px 60px
             padding: calc(60px + 1.5em) 0 2em 0
+
+@media (max-width: $narrow)
+    footer
+        a,
+        a:link,
+        a:active,
+        a:visited
+            display: inline
+            font-size: 0.8em
+            padding: 0em 0.3em
+
+        aside
+            padding: 0.25em 0
+            text-align: center
+
+        nav#footer
+            display: block
+

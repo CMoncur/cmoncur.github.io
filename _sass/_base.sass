@@ -1,5 +1,8 @@
 @import "constants";
 
+html
+    overflow-x: hidden
+
 body
     background-color: $slate-gray
     font-size: 24px
@@ -8,3 +11,7 @@ body
 @media (max-width: $standard)
     body
         font-size: 18px
+
+@media (max-width: $narrow)
+    body
+        font-size: 14px

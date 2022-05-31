@@ -1,5 +1,5 @@
 @import "constants";
-    
+
 nav#header
     height: 100px
     left: 0
@@ -45,7 +45,11 @@ nav#header
         width: 100%
         z-index: -1
 
-    > img
+    > img#hamburger,
+    > img#hamburger-close
+        display: none
+
+    > img.logo
         display: block
         float: left
         height: 60px
@@ -71,6 +75,9 @@ nav#header
             height: 40px
             width: 40px
 
+    section
+        display: none
+
 @media (max-width: $standard)
     nav#header
         height: 80px
@@ -84,7 +91,7 @@ nav#header
         > a:visited
             line-height: 40px
 
-        > img
+        > img.logo
             height: 40px
             width: 40px
 
@@ -95,4 +102,93 @@ nav#header
             a, a:link, a:active, a:visited, img
                 height: 30px
                 width: 30px
-            
+
+@media (max-width: $narrow)
+    nav#header
+        height: 60px
+        padding: 10px 15px
+
+        &.scrolled
+            height: 60px
+            padding: 10px 15px
+
+        &.expanded
+            height: 100%
+
+            > img#hamburger
+                opacity: 0
+                pointer-events: none
+
+            > img#hamburger-close
+                opacity: 1
+                pointer-events: auto
+
+            section
+                height: 100%
+                opacity: 1
+                pointer-events: auto
+
+        > a, > aside
+            display: none
+
+        > div
+            height: 60px
+
+        > img#hamburger,
+        > img#hamburger-close
+            cursor: pointer
+            display: block
+            height: 40px
+            position: absolute
+            right: 15px
+            top: 10px
+            transition: opacity 300ms
+            width: 40px
+
+        > img#hamburger
+            opacity: 1
+            pointer-events: auto
+
+        > img#hamburger-close
+            opacity: 0
+            pointer-events: none
+
+        aside
+            float: none
+            justify-content: center
+            padding: 5em 0 0 0
+            width: 100%
+
+            a, a:link, a:active, a:visited
+                margin: 0 0.5em
+
+        section
+            background: $black
+            display: block
+            height: 0%
+            left: 0
+            opacity: 0
+            padding: 80px
+            pointer-events: none
+            position: absolute
+            top: 0
+            transition: height 300ms, opacity 300ms
+            width: 100%
+            z-index: -1
+
+            > a,
+            > a:link,
+            > a:active,
+            > a:visited
+                color: $white
+                display: block
+                font-family: "Bebas Neue", sans-serif
+                font-size: 1.5em
+                letter-spacing: 0.2em
+                padding: 0.5em 0
+                text-align: center
+                text-decoration: none
+                transition: color 100ms
+
+            > a:hover
+                color: $text-light-gray
