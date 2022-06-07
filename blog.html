@@ -1,0 +1,36 @@
+---
+# Global
+layout: blog
+title: Blog | Craft Theory
+
+# Page Specific
+splash_main_text: Blog Posts
+splash_sub_text: Nonsense goes here
+---
+
+<section id="index-content">
+    <aside>
+        <h2>Recent Blogs</h2>
+        {% for post in site.posts %}
+        <article>
+            <h3>{{ post.title }}</h3>
+            <h5>Published {{ post.date | date: "%B %e, %Y at %l:%M %P" }}</h5>
+            {{ post.excerpt }}
+            <a class="button" href="{{ post.url }}">Read More</a>
+        </article>
+        {% endfor %}
+    </aside>
+    <aside>
+        <h2>Categories</h2>
+        <!-- TODO: Make this actually pull categories -->
+        <article>
+            <!-- <iframe width="320" height="180" src="https://www.youtube.com/embed/V8f5hoepkWg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+        </article>
+        <article>
+            <!-- <iframe width="320" height="180" src="https://www.youtube.com/embed/KgBXycd5rSk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+        </article>
+        <article>
+            <!-- <iframe width="320" height="180" src="https://www.youtube.com/embed/V8f5hoepkWg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+        </article>
+    </aside>
+</section>
