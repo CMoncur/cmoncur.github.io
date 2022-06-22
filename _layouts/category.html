@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Blog posts in the {{ page.category | capitalize }} category | Craft Theory</title>
+        {% include fonts.html %}
+        {% include favicon.html %}
+        <link rel="stylesheet" href="/css/main.css">
+        <script type="text/javascript" src="/js/scroll.js"></script>
+    </head>
+    <body>
+        {% include header.html %}
+        {% include splash_category.html %}
+        <section id="content">
+            <section id="index-content">
+                <aside>
+                    <h2>Blog posts in {{ page.category | capitalize }}</h2>
+                    <!-- Posts comes from `categories.rb` generator -->
+                    {% for post in page.posts %}
+                    <article>
+                        <h3>{{ post.title }}</h3>
+                        <h5>Published {{ post.date | date: "%B %e, %Y at %l:%M %P" }}</h5>
+                        {% if post.teaser %}
+                            <p>{{ post.teaser | markdownify }}</p> 
+                        {% endif %}
+                        <a class="button" href="{{ post.url }}">Read More</a>
+                    </article>
+                    {% endfor %}
+                </aside>
+                <aside>
+                    <!-- TODO: Make Categories and Tags sidebar include -->
+                    <h2>Categories</h2>
+                    {% for category in site.categories %}
+                        <a
+                            class="button-category-tag button-category"
+                            href="/categories/{{ category | first | url_encode }}"
+                        >
+                            {{ category | first | capitalize }}
+                        </a>
+                    {% endfor %}
+                </aside>
+            </section>
+        </section>
+        {% include footer.html %}
+    </body>
+</html>

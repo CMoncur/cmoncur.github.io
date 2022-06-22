@@ -1,0 +1,16 @@
+---
+# Global
+layout: category_index
+title: Blog | Craft Theory
+
+# Page Specific
+splash_main_text: Categories
+---
+
+<section>
+    {% for category in site.categories %}
+        <a class="button" href="/categories/{{ category | first | url_encode }}">
+            {{ category | first | capitalize }}
+        </a>
+    {% endfor %}
+</section>

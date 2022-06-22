@@ -1,0 +1,6 @@
+defaults:
+  - scope:
+      type: categories
+    values:
+      layout: category
+      permalink: categories/:category/

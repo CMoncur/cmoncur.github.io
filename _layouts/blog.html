@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>{{ page.title }}</title>
+        <title>{{ page.title }} | Craft Theory</title>
         {% include fonts.html %}
         {% include favicon.html %}
         <link rel="stylesheet" href="/css/main.css">
@@ -13,7 +13,24 @@
         {% include header.html %}
         {% include splash_blog.html %}
         <section id="content">
-            {{ content }}
+            <section id="index-content">
+                <aside>
+                    {{ content }}
+                </aside>
+                <aside>
+                    <h2>Category</h2>
+                    <a
+                        class="button-category-tag button-category"
+                        href="/categories/{{ page.category | url_encode }}"
+                    >
+                        {{ page.category | capitalize }}
+                    </a>
+                    <h2>Tags</h2>
+                    {% for tag in page.tags %}
+                        <a class="button-category-tag button-tag" href="#">{{ tag }}</a>
+                    {% endfor %}
+                </aside>
+            </section>
         </section>
         {% include footer.html %}
     </body>

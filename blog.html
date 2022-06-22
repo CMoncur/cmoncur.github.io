@@ -1,6 +1,6 @@
 ---
 # Global
-layout: blog
+layout: blog_index
 title: Blog | Craft Theory
 
 # Page Specific
@@ -15,22 +15,23 @@ splash_sub_text: Nonsense goes here
         <article>
             <h3>{{ post.title }}</h3>
             <h5>Published {{ post.date | date: "%B %e, %Y at %l:%M %P" }}</h5>
-            {{ post.excerpt }}
+            {% if post.teaser %}
+                <p>{{ post.teaser | markdownify }}</p> 
+            {% endif %}
             <a class="button" href="{{ post.url }}">Read More</a>
         </article>
         {% endfor %}
     </aside>
     <aside>
+        <!-- TODO: Make Categories and Tags sidebar include -->
         <h2>Categories</h2>
-        <!-- TODO: Make this actually pull categories -->
-        <article>
-            <!-- <iframe width="320" height="180" src="https://www.youtube.com/embed/V8f5hoepkWg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
-        </article>
-        <article>
-            <!-- <iframe width="320" height="180" src="https://www.youtube.com/embed/KgBXycd5rSk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
-        </article>
-        <article>
-            <!-- <iframe width="320" height="180" src="https://www.youtube.com/embed/V8f5hoepkWg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
-        </article>
+        {% for category in site.categories %}
+            <a
+                class="button-category-tag button-category"
+                href="/categories/{{ category | first | url_encode }}"
+            >
+                {{ category | first }}
+            </a>
+        {% endfor %}
     </aside>
 </section>

@@ -1,9 +1,9 @@
 ---
 # Global
 layout: blog
-title: "Totally Real and Valid Blog Entry"
+title: "Totally Fake and Valid Blog Entry"
 date: 2022-06-06 21:15:00 -0700
-category: poker
+category: dev
 tags: [ 
     flop,
     preflop,
@@ -13,8 +13,8 @@ tags: [
     live poker
 ]
 teaser: |
-    So, **this** is what an intro quote looks like, and you can even
-    stylize it *with italics!* Isn't that neat?
+    **this** is what an intro quote looks like, and you can even
+    stylize it *with italics!* Isn't that neat? HAHA YEAH.
 ---
 
 ## A Chapter Heading
