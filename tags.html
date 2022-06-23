@@ -1,16 +1,10 @@
 ---
 # Global
 layout: category_tag_index
-title: Tags | Craft Theory
+title: Categories and Tags | Craft Theory
 
 # Page Specific
-splash_main_text: Tags
+splash_main_text: Categories and Tags
 ---
 
-<section>
-    {% for tag in site.tags %}
-        <a class="button" href="/tags/{{ tag | first | url_encode }}">
-            {{ tag | first | capitalize }}
-        </a>
-    {% endfor %}
-</section>
+{% include category_tag_index_content.html %}

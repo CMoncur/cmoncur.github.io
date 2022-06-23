@@ -1,0 +1,21 @@
+<section>
+    <h2 class="em-margin-bottom-1">Categories</h2>
+    {% for category in site.categories %}
+        <a
+            class="button em-margin-bottom-025"
+            href="/categories/{{ category | first | uri_escape }}"
+        >
+            {{ category | first | capitalize }}
+        </a>
+    {% endfor %}
+
+    <h2 class="em-margin-top-2 em-margin-bottom-1">Tags</h2>
+    {% for tag in site.tags %}
+        <a
+            class="button em-margin-bottom-025"
+            href="/tags/{{ tag | first | uri_escape }}"
+        >
+            {{ tag | first | capitalize }}
+        </a>
+    {% endfor %}
+</section>

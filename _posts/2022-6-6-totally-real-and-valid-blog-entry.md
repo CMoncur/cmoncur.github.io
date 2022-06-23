@@ -2,7 +2,7 @@
 # Global
 layout: blog
 title: "Totally Real and Valid Blog Entry"
-date: 2022-06-06 21:15:00 -0700
+date: 2022-06-06 21:10:00 -0700
 category: poker
 tags: [ 
     flop,
