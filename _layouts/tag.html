@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Blog posts in the {{ page.category | capitalize }} category | Craft Theory</title>
+        <title>Blog posts tagged with "{{ page.tag | capitalize }}" | Craft Theory</title>
         {% include fonts.html %}
         {% include favicon.html %}
         <link rel="stylesheet" href="/css/main.css">
@@ -11,12 +11,12 @@
     </head>
     <body>
         {% include header.html %}
-        {% include splash_category.html %}
+        {% include splash_tag.html %}
         <section id="content">
             <section id="index-content">
                 <aside>
-                    <h2>Blog posts in {{ page.category | capitalize }}</h2>
-                    <!-- Posts comes from `categories.rb` generator -->
+                    <h2>Blog posts tagged with "{{ page.tag | capitalize }}"</h2>
+                    <!-- Posts comes from `tags.rb` generator -->
                     {% for post in page.posts %}
                     <article>
                         <h3>{{ post.title }}</h3>

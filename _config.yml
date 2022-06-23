@@ -4,3 +4,9 @@ defaults:
     values:
       layout: category
       permalink: categories/:category/
+  
+  - scope:
+      type: tags
+    values:
+      layout: tag
+      permalink: tags/:tag/

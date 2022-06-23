@@ -4,8 +4,7 @@ layout: blog
 title: "Totally Fake and Valid Blog Entry"
 date: 2022-06-06 21:15:00 -0700
 category: dev
-tags: [ 
-    flop,
+tags: [
     preflop,
     etiquette,
     hand analysis,

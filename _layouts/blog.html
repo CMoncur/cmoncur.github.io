@@ -18,10 +18,11 @@
                     {{ content }}
                 </aside>
                 <aside>
+                    <!-- TODO: Make only show specific blog post category and tags -->
                     <h2>Category</h2>
                     <a
                         class="button-category-tag button-category"
-                        href="/categories/{{ page.category | url_encode }}"
+                        href="/categories/{{ page.category | uri_escape }}"
                     >
                         {{ page.category | capitalize }}
                     </a>

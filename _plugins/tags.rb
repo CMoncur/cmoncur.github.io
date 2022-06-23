@@ -1,46 +1,46 @@
-module CategoriesPlugin
-    class CategoryPageGenerator < Jekyll::Generator
+module TagsPlugin
+    class TaPageGenerator < Jekyll::Generator
         safe true
 
         def generate(site)
-            site.categories.each do |category, posts|
-                site.pages << CategoryPage.new(site, category, posts)
+            site.tags.each do |tag, posts|
+                site.pages << TagPage.new(site, tag, posts)
             end
         end
     end
 
     # Subclass of `Jekyll::Page` with custom method definitions.
-    class CategoryPage < Jekyll::Page
-        def initialize(site, category, posts)
+    class TagPage < Jekyll::Page
+        def initialize(site, tag, posts)
             @site = site             # the current site instance.
             @base = site.source      # path to the source directory.
-            @dir    = category         # the directory the page will reside in.
+            @dir    = tag         # the directory the page will reside in.
 
             # All pages have the same filename, so define attributes straight away.
             @basename = 'index'      # filename without the extension.
             @ext      = '.html'      # the extension.
             @name     = 'index.html' # basically @basename + @ext.
 
-            # Initialize data hash with a key pointing to all posts under current category.
+            # Initialize data hash with a key pointing to all posts under current tag.
             # This allows accessing the list in a template via `page.posts`.
             #
             # ADD YOUR FRONT MATTER HERE!
             @data = {
-            'category' => category,
+            'tag'      => tag,
             'posts'    => posts
             }
 
-            # Look up front matter defaults scoped to type `categories`, if given key
+            # Look up front matter defaults scoped to type `tags`, if given key
             # doesn't exist in the `data` hash.
             data.default_proc = proc do |_, key|
-                site.frontmatter_defaults.find(relative_path, :categories, key)
+                site.frontmatter_defaults.find(relative_path, :tags, key)
             end
         end
 
         # Placeholders that are used in constructing page URL.
         def url_placeholders
             {
-                :category   => @dir,
+                :tag        => @dir,
                 :basename   => basename,
                 :output_ext => output_ext,
             }

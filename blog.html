@@ -23,15 +23,6 @@ splash_sub_text: Nonsense goes here
         {% endfor %}
     </aside>
     <aside>
-        <!-- TODO: Make Categories and Tags sidebar include -->
-        <h2>Categories</h2>
-        {% for category in site.categories %}
-            <a
-                class="button-category-tag button-category"
-                href="/categories/{{ category | first | url_encode }}"
-            >
-                {{ category | first }}
-            </a>
-        {% endfor %}
+        {% include categories_tags_sidebar.html %}
     </aside>
 </section>
