@@ -4,7 +4,7 @@
         class="button-category-tag button-category"
         href="/categories/{{ category | first | uri_escape }}"
     >
-        {{ category | first | capitalize }}
+        {{ category | first | capitalize }} ({{ category[1].size }})
     </a>
 {% endfor %}
 
@@ -14,6 +14,6 @@
         class="button-category-tag button-tag"
         href="/tags/{{ tag | first | uri_escape }}"
     >
-        {{ tag | first | capitalize }}
+        {{ tag | first | capitalize }} ({{ tag[1].size }})
     </a>
 {% endfor %}

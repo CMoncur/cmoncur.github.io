@@ -13,8 +13,7 @@ tags: [
     live poker
 ]
 teaser: |
-    So, **this** is what an intro quote looks like, and you can even
-    stylize it *with italics!* Isn't that neat?
+    *Vestibulum ante ipsum primis in faucibus orci* luctus et ultrices posuere cubilia curae; Nam pharetra risus a lorem consequat, ut placerat mauris fringilla. Integer porttitor, nisl in molestie tristique, sem erat feugiat sapien, non feugiat purus nisl id dui.
 ---
 
 ## A Chapter Heading

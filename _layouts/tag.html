@@ -19,12 +19,11 @@
                     <!-- Posts comes from `tags.rb` generator -->
                     {% for post in page.posts %}
                     <article>
-                        <h3>{{ post.title }}</h3>
+                        <a class="post-title" href="{{ post.url }}">{{ post.title }}</a>
                         <h5>Published {{ post.date | date: "%B %e, %Y at %l:%M %P" }}</h5>
                         {% if post.teaser %}
-                            <p>{{ post.teaser | markdownify }}</p> 
+                            {{ post.teaser | markdownify }}
                         {% endif %}
-                        <a class="button" href="{{ post.url }}">Read More</a>
                     </article>
                     {% endfor %}
                 </aside>

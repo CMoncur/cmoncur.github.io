@@ -5,7 +5,7 @@
             class="button em-margin-bottom-025"
             href="/categories/{{ category | first | uri_escape }}"
         >
-            {{ category | first | capitalize }}
+            {{ category | first | capitalize }} ({{ category[1].size }})
         </a>
     {% endfor %}
 
@@ -15,7 +15,7 @@
             class="button em-margin-bottom-025"
             href="/tags/{{ tag | first | uri_escape }}"
         >
-            {{ tag | first | capitalize }}
+            {{ tag | first | capitalize }} ({{ tag[1].size }})
         </a>
     {% endfor %}
 </section>

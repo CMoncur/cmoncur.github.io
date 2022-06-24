@@ -1,7 +1,10 @@
 ---
+# Temporary
+featured: true
+
 # Global
 layout: blog
-title: "Totally Fake and Valid Blog Entry"
+title: "Totally Fake and Invalid Blog Entry"
 date: 2022-06-06 21:15:00 -0700
 category: dev
 tags: [
@@ -12,8 +15,7 @@ tags: [
     live poker
 ]
 teaser: |
-    **this** is what an intro quote looks like, and you can even
-    stylize it *with italics!* Isn't that neat? HAHA YEAH.
+    **Lorem ipsum dolor sit amet, consectetur adipiscing elit.** Curabitur rutrum ex et nisl faucibus volutpat. Fusce posuere scelerisque dui sit amet pellentesque. Phasellus blandit orci augue, eu dignissim metus aliquam tincidunt.
 ---
 
 ## A Chapter Heading

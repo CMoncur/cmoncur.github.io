@@ -3,17 +3,28 @@
         <aside>
             <a href="/">Home</a>
             <a href="/blog">Blog</a>
-            <a href="/podcast">Podcast</a>
-            <a href="/about">About</a>
+            <a href="/#about">About</a>
         </aside>
         <aside>
-            <a href="/">YouTube</a>
-            <a href="/">Twitch</a>
+            <a
+                href="https://www.youtube.com/channel/UCJjVE_IAwBSthzP4l7ouA5g"
+                target="_blank"
+            >
+                YouTube
+            </a>
+            <a
+                href="https://www.twitch.tv/crafttheory"
+                target="_blank"
+            >
+                Twitch
+            </a>
         </aside>
         <aside>
-            <a href="/">Apple Podcasts</a>
-            <a href="/">Google Podcasts</a>
-            <a href="/">Spotify</a>
+            {% for category in site.categories %}
+            <a href="/categories/{{ category | first | uri_escape }}">
+                Posts in {{ category | first | capitalize }} ({{ category[1].size }})
+            </a>
+            {% endfor %}
         </aside>
     </nav>
     <h6>Copyright &copy; 2022 Craft Theory</h6>

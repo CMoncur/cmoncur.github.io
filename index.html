@@ -1,47 +1,79 @@
 ---
 # Global
 layout: default
-title: Craft Theory | A Poker Strategy Blog
+title: Craft Theory | Cody Moncur's Personal Poker and Dev Blog
 
 # Page Specific
-splash_main_text: Lorem ipsum dolor sit amet
-splash_sub_text: Lorem ipsum and stuff yeah cool
+splash_main_text: Well met! My name is Cody...
+splash_sub_text: |
+    ... but I'm known to many as Craft. I am a software engineer, and I blog about poker and
+    software development.
 ---
 
 <section id="index-content">
     <aside>
-        <h2>Recent Blogs</h2>
-        <!-- TODO: Make this actually pull posts -->
-        <article>
-            <h3>Lorem ipsum dolor sit amet</h3>
-            <h5>Published May 27, 2022 at 10:41 pm</h5>
-            <p>Morbi vitae sem nec quam vulputate tincidunt. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent porta, magna vel pretium pulvinar, neque velit pretium est, a interdum nisi justo non nibh. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas... </p>
-            <a class="button" href="#">Read More</a>
-        </article>
-        <article>
-            <h3>Out of Position vs a Loose Opponent</h3>
-            <h5>Published April 27, 2022 at 10:41 pm</h5>
-            <p>Phasellus eros enim, sollicitudin nec risus ac, mollis ultricies ex. Morbi cursus sapien non massa tincidunt, maximus egestas libero feugiat. Maecenas at efficitur sem, vitae fermentum magna. Morbi aliquam, sem ut pharetra fringilla, neque tellus pharetra justo, nec accumsan urna eros eget erat. Ut eget erat vel nisi semper convallis et sit amet arcu... </p>
-            <a class="button" href="#">Read More</a>
-        </article>
-        <article>
-            <h3>Phasellus ac risus erat</h3>
-            <h5>Published March 27, 2022 at 10:41 pm</h5>
-            <p>Fusce ut mi euismod, egestas metus eget, placerat purus. Etiam tincidunt eros leo, id sollicitudin arcu sollicitudin at. Praesent facilisis ex ut mollis dictum. Suspendisse pulvinar aliquet magna, sit amet tincidunt leo fringilla ac. Vestibulum ipsum nibh, sagittis id bibendum in, dictum sed neque. Donec quam eros, suscipit eget magna vitae, mattis pulvinar enim...</p>
-            <a class="button" href="#">Read More</a>
-        </article>
+        <h2>Featured Posts</h2>
+        {% assign featured_posts = site.posts | where: "featured", true %}
+        {% for post in featured_posts %}
+            <article>
+                <a class="post-title" href="{{ post.url }}">{{ post.title }}</a>
+                <h5>Published {{ post.date | date: "%B %e, %Y at %l:%M %P" }}</h5>
+                {% if post.teaser %}
+                    {{ post.teaser | markdownify }}
+                {% endif %}
+            </article>
+        {% endfor %}
+        <article></article>
+        <h3 id="about">About Me</h3>
+        <p>
+            Hello there! My name is <strong>Cody Moncur</strong>. I'm a Las
+            Vegas based software engineer, poker enthusiast, United States
+            Marine Corps veteran, mountain biker, and creator.
+        </p>
+        <h2 class="em-margin-top-1">My Developer Journey</h2>
+        <p>
+            In nearly ten years of professional experience, I have gone from
+            <strong>front-end engineer</strong> helping big-name organizations
+            showcase new products, to <strong>back-end engineer</strong>
+            writing authentication software, to
+            <strong>mobile developer</strong> publishing sleek and user
+            friendly applications on both Android and Apple platforms,
+            and everything in between.  
+        </p>
+        <p>
+            <strong>TypeScript</strong>, <strong>Python</strong>,
+            <strong>React</strong>, and <strong>Flask</strong> are
+            my languages and tools of choice, and I tend to code in a
+            <strong>functionally aware</strong> style. My journey has
+            introduced me to plenty of other syntaxes, frameworks, and
+            paradigms as well, and I won't ever shy away from an opportunity
+            to learn something new!
+        </p>
+        <h2 class="em-margin-top-1">My Poker Journey</h2>
+        <p>
+            Traits such as problem solving, logic, and deductive reasoning
+            are common among software engineers, and also lend themselves
+            to success in poker. So, it's no surprise that after my graduation
+            from Washington State University in 2015, and my subsequent move
+            to Las Vegas, I rapidly grew to love the game.
+        </p>
+        <p>
+            While my primary area of focus is <strong>pot-limit omaha</strong>
+            cash games, I have seen success in tournaments as well, to include
+            a <strong>3rd place finish</strong> in a PLO/NLHE World Series 
+            of Poker circuit event in 2019, and a
+            <strong>top 0.4% finish</strong> in the World Series of Poker
+            "Colossus" event in 2018, which drew a field of over 13,000
+            entrants.
+        </p>
+        <p>
+            My goal is to tell my poker story and share my studies using this
+            very blog as a medium! I primarily enjoy writing to track my own
+            development as a player, but I hope that the content found here may
+            be valuable to others as well. In time, I'd like to begin coaching!
+        </p>
     </aside>
     <aside>
-        <h2>Recent Podcasts</h2>
-        <!-- TODO: Make this actually pull posts -->
-        <article>
-            <!-- <iframe width="320" height="180" src="https://www.youtube.com/embed/V8f5hoepkWg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
-        </article>
-        <article>
-            <!-- <iframe width="320" height="180" src="https://www.youtube.com/embed/KgBXycd5rSk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
-        </article>
-        <article>
-            <!-- <iframe width="320" height="180" src="https://www.youtube.com/embed/V8f5hoepkWg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
-        </article>
+        {% include categories_tags_sidebar.html %}
     </aside>
 </section>
