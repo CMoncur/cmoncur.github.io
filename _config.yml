@@ -10,3 +10,5 @@ defaults:
     values:
       layout: tag
       permalink: tags/:tag/
+
+destination: "docs"
