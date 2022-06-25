@@ -1,5 +1,10 @@
 # Jekyll/Ruby Stuff
-_site/
+
+# NOTE:
+# GitHub Pages doesn't allow for custom Ruby plugins. This means that my
+# method of generating pages for each category and tag will not work.
+# To get around this, I'm pushing up the entire statically generated site.
+# _site/
 .sass-cache/
 .jekyll-cache/
 .jekyll-metadata
