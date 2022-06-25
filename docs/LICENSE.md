@@ -1,11 +1,11 @@
 # Articles
-All articles (files within the `_posts` directory) are licenced under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Articles may be shared and altered so long as proper attribution accompanies the work. Proper attribution includes both of the following:
+All articles (files within the `_posts` and `docs` directory) are licenced under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Articles may be shared and altered so long as proper attribution accompanies the work. Proper attribution includes both of the following:
 
 - A link to the source article
 - Accreditation of the author (Cody Moncur)
 
 # Theme and Code
-The theme and code within this repository (everything that isn't in the `_posts` directory) are licensed under the MIT License
+The theme and code within this repository (everything that isn't in the `_posts` or `docs` directories) are licensed under the MIT License
 
 ### MIT License
 Copyright 2022 Cody Moncur
