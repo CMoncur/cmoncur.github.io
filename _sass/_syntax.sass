@@ -41,9 +41,23 @@ div.highlight
     div.highlight
         font-size: 0.8em
 
+// NECESSARY CUSTOM ADDITIONS
+// Plaintext (placed in a `code` block)
+.highlight code
+    color: $text
+
+// Literal String Quote
+.highlight .dl
+    color: $text_literal
+
+// Literal String Colon
+.highlight .pi
+    color: $text
+
 .highlight .hll
     background-color: $background
 
+// GENERAL THEME STYLES
 // Comment
 .highlight .c
     color: $comment
@@ -344,12 +358,3 @@ div.highlight
 .highlight .il
     color: $text_number
     font-weight: bold
-
-// NECESSARY ADDITIONS
-// Literal String Quote
-.highlight .dl
-    color: $text_literal
-
-// Literal String Colon
-.highlight .pi
-    color: $text

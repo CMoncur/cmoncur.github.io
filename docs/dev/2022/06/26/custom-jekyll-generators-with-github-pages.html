@@ -25,6 +25,9 @@
     <a href="/">Home</a>
     <a href="/blog">Blog</a>
     <aside>
+        <a href="https://github.com/cmoncur" target="_blank">
+            <img src="/img/logo_github.svg" alt="Cody Moncur's GitHub Profile">
+        </a>
         <a href="https://www.youtube.com/channel/UCJjVE_IAwBSthzP4l7ouA5g" target="_blank">
             <img src="/img/logo_youtube.svg" alt="Craft Theory YouTube Channel">
         </a>
@@ -36,6 +39,9 @@
         <a href="/">Home</a>
         <a href="/blog">Blog</a>
         <aside>
+            <a href="https://github.com/cmoncur" target="_blank">
+                <img src="/img/logo_github.svg" alt="Cody Moncur's GitHub Profile">
+            </a>
             <a href="https://www.youtube.com/channel/UCJjVE_IAwBSthzP4l7ouA5g" target="_blank">
                 <img src="/img/logo_youtube.svg" alt="Craft Theory YouTube Channel">
             </a>
@@ -49,7 +55,7 @@
         <section id="splash" class="splash-blog">
     <div>
         <h1>Custom Jekyll Generators with GitHub Pages</h1>
-        <h4>Published June 26, 2022 at 12:27 am</h4>
+        <h4>Published June 26, 2022 at 11:27 am</h4>
         <aside id="banner">
             <h1>Craft Theory</h1>
         </aside>
@@ -101,7 +107,7 @@
 
 <h2 id="resolution">Resolution</h2>
 
-<p>Just one more hidden (but quick) step was necessary. By default, GitHub Pages only publishes from the root or <code class="language-plaintext highlighter-rouge">docs</code> directory. So, I had to create a <code class="language-plaintext highlighter-rouge">docs</code> directory in the blog repository, select that directory in the GitHub Pages settings, and then change Jekyll’s build destination directory to <code class="language-plaintext highlighter-rouge">docs</code> by including the following line in the <code class="language-plaintext highlighter-rouge">_config.yml</code> file:</p>
+<p>Just two more hidden (but quick) steps were necessary. By default, GitHub Pages only publishes from the root or <code class="language-plaintext highlighter-rouge">docs</code> directory. So, I had to ensure that the GitHub Pages settings pointed to the <code class="language-plaintext highlighter-rouge">docs</code> directory, and then change Jekyll’s build destination directory to <code class="language-plaintext highlighter-rouge">docs</code> by including the following line in the <code class="language-plaintext highlighter-rouge">_config.yml</code> file:</p>
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">...</span>
 
@@ -110,18 +116,25 @@
 <span class="nn">...</span>
 </code></pre></div></div>
 
+<p>Lastly, GitHub Pages looks for a <code class="language-plaintext highlighter-rouge">CNAME</code> file in the directory it publishes from (in this case, <code class="language-plaintext highlighter-rouge">docs</code>). I created a <code class="language-plaintext highlighter-rouge">CNAME</code> file with a single line in the repository root with my custom domain:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>crafttheory.blog
+</code></pre></div></div>
+
+<p>When building, Jekyll will copy this <code class="language-plaintext highlighter-rouge">CNAME</code> file to the <code class="language-plaintext highlighter-rouge">docs</code> directory along with the rest of the build artifacts.</p>
+
 <p>Success! The blog maintains the structure that I prefer, and the sacrifice to make it so was minimal.</p>
 
                 </aside>
                 <aside>
-                    <h2>Post Category</h2>
+                    <h2 class="gray">Post Category</h2>
                     <a
                         class="button-category-tag"
                         href="/categories/dev"
                     >
                         Dev
                     </a>
-                    <h2>Post Tags</h2>
+                    <h2 class="gray">Post Tags</h2>
                     
                         <a
                             class="button-category-tag"
@@ -148,6 +161,12 @@
             <a href="/#about">About</a>
         </aside>
         <aside>
+            <a
+                href="https://github.com/cmoncur"
+                target="_blank"
+            >
+                GitHub
+            </a>
             <a
                 href="https://www.youtube.com/channel/UCJjVE_IAwBSthzP4l7ouA5g"
                 target="_blank"

@@ -1,6 +1,6 @@
 # Greetings!
 
-This is the repository for my personal website and blog.
+This is the repository for my [personal website and blog](https://crafttheory.blog).
 
 Feel free to use and/or edit the theme/code. If you do, I would appreciate a shoutout!
 
