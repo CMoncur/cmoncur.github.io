@@ -20,6 +20,12 @@
             </a>
         </aside>
         <aside>
+            <a href="/categories">
+                Categories ({{ site.categories | size }})
+            </a>
+            <a href="/tags">
+                Tags ({{ site.tags | size }})
+            </a>
             {% for category in site.categories %}
             <a href="/categories/{{ category | first | uri_escape }}">
                 Posts in {{ category | first | capitalize }} ({{ category[1].size }})

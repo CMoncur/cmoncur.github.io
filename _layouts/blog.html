@@ -20,7 +20,7 @@
                 <aside>
                     <h2>Post Category</h2>
                     <a
-                        class="button-category-tag button-category"
+                        class="button-category-tag"
                         href="/categories/{{ page.category | uri_escape }}"
                     >
                         {{ page.category | capitalize }}
@@ -28,7 +28,7 @@
                     <h2>Post Tags</h2>
                     {% for tag in page.tags %}
                         <a
-                            class="button-category-tag button-tag"
+                            class="button-category-tag"
                             href="/tags/{{ tag | uri_escape }}"
                         >
                             {{ tag | capitalize }}

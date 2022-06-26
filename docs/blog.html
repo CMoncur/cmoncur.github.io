@@ -6,7 +6,7 @@
         <title>Blog | Craft Theory</title>
         <link
     rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:ital,wght@0,300;0,400;0,700;1,300"
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:ital,wght@0,300;0,400;0,700;1,300&family=Roboto+Mono:wght@300;700"
 >
         <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png">
@@ -67,19 +67,10 @@ occasions, something different...
         <h2>Recent Posts</h2>
         
         <article>
-            <a class="post-title" href="/dev/2022/06/06/totally-fake-and-invalid-blog-entry.html">Totally Fake and Invalid Blog Entry</a>
-            <h5>Published June  6, 2022 at  9:15 pm</h5>
+            <a class="post-title" href="/dev/2022/06/26/custom-jekyll-generators-with-github-pages.html">Custom Jekyll Generators with GitHub Pages</a>
+            <h5>Published June 26, 2022 at 12:27 am</h5>
             
-                <p><strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</strong> Curabitur rutrum ex et nisl faucibus volutpat. Fusce posuere scelerisque dui sit amet pellentesque. Phasellus blandit orci augue, eu dignissim metus aliquam tincidunt.</p>
- 
-            
-        </article>
-        
-        <article>
-            <a class="post-title" href="/poker/2022/06/06/totally-real-and-valid-blog-entry.html">Totally Real and Valid Blog Entry</a>
-            <h5>Published June  6, 2022 at  9:10 pm</h5>
-            
-                <p><em>Vestibulum ante ipsum primis in faucibus orci</em> luctus et ultrices posuere cubilia curae; Nam pharetra risus a lorem consequat, ut placerat mauris fringilla. Integer porttitor, nisl in molestie tristique, sem erat feugiat sapien, non feugiat purus nisl id dui.</p>
+                <p>When attempting to publish this Jekyll blog using GitHub Pages for the first time, it became immediately obvious that something wasn’t right. I had created custom plugins to generate index pages for each category and tag. These plugins were closely modeled after the <code class="language-plaintext highlighter-rouge">CategoryPageGenerator</code> sample that <a href="https://jekyllrb.com/docs/plugins/generators/" target="_blank">Jekyll’s generator documentation outlines</a>. Locally, everything looked okay, even using the <code class="language-plaintext highlighter-rouge">github-pages</code> gem. Why, then, didn’t these generated pages show up when published?</p>
  
             
         </article>
@@ -89,14 +80,7 @@ occasions, something different...
         <h2>Categories</h2>
 
     <a
-        class="button-category-tag button-category"
-        href="/categories/poker"
-    >
-        Poker (1)
-    </a>
-
-    <a
-        class="button-category-tag button-category"
+        class="button-category-tag"
         href="/categories/dev"
     >
         Dev (1)
@@ -106,45 +90,17 @@ occasions, something different...
 <h2>Tags</h2>
 
     <a
-        class="button-category-tag button-tag"
-        href="/tags/flop"
+        class="button-category-tag"
+        href="/tags/github%20pages"
     >
-        Flop (1)
+        Github pages (1)
     </a>
 
     <a
-        class="button-category-tag button-tag"
-        href="/tags/preflop"
+        class="button-category-tag"
+        href="/tags/jekyll"
     >
-        Preflop (2)
-    </a>
-
-    <a
-        class="button-category-tag button-tag"
-        href="/tags/etiquette"
-    >
-        Etiquette (2)
-    </a>
-
-    <a
-        class="button-category-tag button-tag"
-        href="/tags/hand%20analysis"
-    >
-        Hand analysis (2)
-    </a>
-
-    <a
-        class="button-category-tag button-tag"
-        href="/tags/bankroll%20management"
-    >
-        Bankroll management (2)
-    </a>
-
-    <a
-        class="button-category-tag button-tag"
-        href="/tags/live%20poker"
-    >
-        Live poker (2)
+        Jekyll (1)
     </a>
 
     </aside>
@@ -173,9 +129,11 @@ occasions, something different...
             </a>
         </aside>
         <aside>
-            
-            <a href="/categories/poker">
-                Posts in Poker (1)
+            <a href="/categories">
+                Categories (1)
+            </a>
+            <a href="/tags">
+                Tags (2)
             </a>
             
             <a href="/categories/dev">

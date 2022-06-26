@@ -1,0 +1,355 @@
+// CONSTANTS
+$background: #171819
+$border: #63676b
+
+$comment: #008800
+$comment_preproc: #ff0007 // Python docstrings, for instance
+
+$text: #ffffff
+$text_attribute: #ff0007
+$text_highlight: #fb660a
+$text_literal: #0086d2
+$text_name: #ff0007
+$text_number: #0086d2
+$text_output: #444444
+$text_type: #cdcaa9
+$text_whitespace: #888888
+
+// INLINE CODE
+li > code,
+p > code
+    background-color: $background
+    border: 1px solid $border
+    border-radius: 4px
+    color: $text_type
+    font-family: "Roboto Mono", sans-serif
+    padding: 0 0.25em
+
+// CODE BLOCK THEME STYLES
+div.highlight
+    background-color: $background
+    border: 1px solid $border
+    border-radius: 4px
+    font-family: "Roboto Mono", sans-serif
+    font-size: 0.6em
+    line-height: 1.2em
+    margin: 1.5em 0
+    overflow-x: auto
+    padding: 1em
+
+@media (max-width: 960px)
+    div.highlight
+        font-size: 0.8em
+
+.highlight .hll
+    background-color: $background
+
+// Comment
+.highlight .c
+    color: $comment
+    font-style: italic
+    background-color: $background
+
+// Error
+.highlight .err
+    color: $text
+
+// Generic
+.highlight .g
+    color: $text
+
+// Keyword
+.highlight .k
+    color: $text_highlight
+    font-weight: bold
+
+// Literal
+.highlight .l
+    color: $text
+
+// Name
+.highlight .n
+    color: $text
+
+// Operator
+.highlight .o
+    color: $text
+
+// Other
+.highlight .x
+    color: $text
+
+// Punctuation
+.highlight .p
+    color: $text
+
+// Comment Multiline
+.highlight .cm
+    color: $comment
+    font-style: italic
+    background-color: $background
+
+// Comment Preproc
+.highlight .cp
+    color: $comment_preproc
+    font-weight: bold
+    font-style: italic
+    background-color: $background
+
+// Comment Single
+.highlight .c1
+    color: $comment
+    font-style: italic
+    background-color: $background
+
+// Comment Special
+.highlight .cs
+    color: $comment
+    font-style: italic
+    background-color: $background
+
+// Generig Deleted
+.highlight .gd
+    color: $text
+
+// Generid Emph
+.highlight .ge
+    color: $text
+
+// Generic Error
+.highlight .gr
+    color: $text
+
+// Generic Heading
+.highlight .gh
+    color: $text
+    font-weight: bold
+
+// Generic Inserted
+.highlight .gi
+    color: $text
+
+// Generic Output
+.highlight .go
+    color: $text_output
+    background-color: $background
+
+// Generic Prompt
+.highlight .gp
+    color: $text
+
+// Generic Strong
+.highlight .gs
+    color: $text
+
+// Generic Subheading
+.highlight .gu
+    color: $text
+    font-weight: bold
+
+// Generic Traceback
+.highlight .gt
+    color: $text
+
+// Keyword Constant
+.highlight .kc
+    color: $text_highlight
+    font-weight: bold
+
+// Keyword Declaration
+.highlight .kd
+    color: $text_highlight
+    font-weight: bold
+
+// Keyword Namespace
+.highlight .kn
+    color: $text_highlight
+    font-weight: bold
+
+// Keyword Pseudo
+.highlight .kp
+    color: $text_highlight
+
+// Keyword Reserved
+.highlight .kr
+    color: $text_highlight
+    font-weight: bold
+
+// Keyword Type
+.highlight .kt
+    color: $text_type
+    font-weight: bold
+
+// Literal Date
+.highlight .ld
+    color: $text
+
+// Literal Number
+.highlight .m
+    color: $text_number
+    font-weight: bold
+
+// Literal String
+.highlight .s
+    color: $text_literal
+
+// Name Attribute
+.highlight .na
+    color: $text_name
+    font-weight: bold
+
+// Name Builtin
+.highlight .nb
+    color: $text
+
+// Name Class
+.highlight .nc
+    color: $text
+
+// Name Constant
+.highlight .no
+    color: $text_literal
+
+// Name Decorator
+.highlight .nd
+    color: $text
+
+// Name Entity
+.highlight .ni
+    color: $text
+
+// Name Exception
+.highlight .ne
+    color: $text
+
+// Name Function
+.highlight .nf
+    color: $text_name
+    font-weight: bold
+
+// Name Label
+.highlight .nl
+    color: $text
+
+// Name Namespace
+.highlight .nn
+    color: $text
+
+// Name Other
+.highlight .nx
+    color: $text
+
+// Name Property
+.highlight .py
+    color: $text
+
+// Name Tag
+.highlight .nt
+    color: $text_highlight
+    font-weight: bold
+
+// Name Variable
+.highlight .nv
+    color: $text_highlight
+
+// Operator Word
+.highlight .ow
+    color: $text
+
+// Text Whitespace
+.highlight .w
+    color: $text_whitespace
+
+// Literal Number Float
+.highlight .mf
+    color: $text_number
+    font-weight: bold
+
+// Literal Number Hex
+.highlight .mh
+    color: $text_number
+    font-weight: bold
+
+// Literal Number Integer
+.highlight .mi
+    color: $text_number
+    font-weight: bold
+
+// Literal Number Oct
+.highlight .mo
+    color: $text_number
+    font-weight: bold
+
+// Literal String Backtick
+.highlight .sb
+    color: $text_literal
+
+// Literal String Char
+.highlight .sc
+    color: $text_literal
+
+// Literal String Doc
+.highlight .sd
+    color: $text_literal
+
+// Literal String Double
+.highlight .s2
+    color: $text_literal
+
+// Literal String Escape
+.highlight .se
+    color: $text_literal
+
+// Literal String Heredoc
+.highlight .sh
+    color: $text_literal
+
+// Literal String Interpol
+.highlight .si
+    color: $text_literal
+
+// Literal String Other
+.highlight .sx
+    color: $text_literal
+
+// Literal String Regex
+.highlight .sr
+    color: $text_literal
+
+// Literal String Single
+.highlight .s1
+    color: $text_literal
+
+// Literal String Symbol
+.highlight .ss
+    color: $text_literal
+
+// Name Builtin Pseudo
+.highlight .bp
+    color: $text
+
+// Name Variable Class
+.highlight .vc
+    color: $text_highlight
+
+// Name Variable Global
+.highlight .vg
+    color: $text_highlight
+
+// Name Variable Instance
+.highlight .vi
+    color: $text_highlight
+
+// Literal Number Integer Long
+.highlight .il
+    color: $text_number
+    font-weight: bold
+
+// NECESSARY ADDITIONS
+// Literal String Quote
+.highlight .dl
+    color: $text_literal
+
+// Literal String Colon
+.highlight .pi
+    color: $text
