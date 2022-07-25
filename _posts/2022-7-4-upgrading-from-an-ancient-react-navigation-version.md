@@ -1,7 +1,4 @@
 ---
-# Temporary
-featured: true
-
 # Global
 layout: blog
 title: "Upgrading from an Ancient React Navigation Version"

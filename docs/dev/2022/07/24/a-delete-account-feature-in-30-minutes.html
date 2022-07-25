@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>A "Delete Account" Feature in 30 Minutes | Craft Theory</title>
+        <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:ital,wght@0,300;0,400;0,700;1,300&family=Roboto+Mono:wght@300;700"
+>
+        <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png">
+<link rel="manifest" href="/img/favicon/site.webmanifest">
+
+        <link rel="stylesheet" href="/css/main.css">
+        <script type="text/javascript" src="/js/scroll.js"></script>
+    </head>
+    <body>
+        <nav id="header">
+    <div></div>
+    <img class="logo" src="/img/logo.png" alt="Craft Theory Logo">
+    <img id="hamburger" src="/img/hamburger.svg" alt="Menu">
+    <img id="hamburger-close" src="/img/hamburger_close.svg" alt="Close Menu">
+    <a href="/">Home</a>
+    <a href="/blog">Blog</a>
+    <aside>
+        <a href="https://github.com/cmoncur" target="_blank">
+            <img src="/img/logo_github.svg" alt="Cody Moncur's GitHub Profile">
+        </a>
+        <a href="https://www.youtube.com/channel/UCJjVE_IAwBSthzP4l7ouA5g" target="_blank">
+            <img src="/img/logo_youtube.svg" alt="Craft Theory YouTube Channel">
+        </a>
+        <a href="https://www.twitch.tv/crafttheory" target="_blank">
+            <img src="/img/logo_twitch.svg" alt="Craft Theory Twitch Channel">
+        </a>
+    </aside>
+    <section>
+        <a href="/">Home</a>
+        <a href="/blog">Blog</a>
+        <aside>
+            <a href="https://github.com/cmoncur" target="_blank">
+                <img src="/img/logo_github.svg" alt="Cody Moncur's GitHub Profile">
+            </a>
+            <a href="https://www.youtube.com/channel/UCJjVE_IAwBSthzP4l7ouA5g" target="_blank">
+                <img src="/img/logo_youtube.svg" alt="Craft Theory YouTube Channel">
+            </a>
+            <a href="https://www.twitch.tv/crafttheory" target="_blank">
+                <img src="/img/logo_twitch.svg" alt="Craft Theory Twitch Channel">
+            </a>
+        </aside>
+    </section>
+</nav>
+
+        <section id="splash" class="splash-blog">
+    <div>
+        <h1>A "Delete Account" Feature in 30 Minutes</h1>
+        <h4>Published July 24, 2022 at 10:37 pm</h4>
+        <aside id="banner">
+            <h1>Craft Theory</h1>
+        </aside>
+        <aside id="banner-bottom-left"></aside>
+        <aside id="banner-bottom-right"></aside>
+        <aside id="banner-shadow"></aside>
+    </div>
+</section>
+
+        <section id="content">
+            <section id="index-content">
+                <aside>
+                    <h2 id="an-expected-yet-frustrating-occurrence">An Expected Yet Frustrating Occurrence</h2>
+
+<p>It’s the last email a developer wants to see at midnight on a weekend night…</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>App Store Connect - We noticed an issue with your submission.
+</code></pre></div></div>
+
+<p>I had worked tirelessly during my weeknight evenings last week to finish dark mode support, an aggregate stat feature, and some visual enhancements for <a href="https://plegr.com" target="_blank">Plegr, my side project</a>. Everything had been tested thoroughly, and I was excited about having submitted the app update to Apple’s App Store on Thursday night, going into the weekend with a feeling of accomplishment.</p>
+
+<p>Instead, around midnight between late Friday night and early Saturday morning, and after having waited over 24 hours for a response from Apple, I received the aforementioned email. I imagine most developers have come to expect this. After all, compliance regulations are ever changing, and as an indie developer, it’s impractical (impossible, really) to keep up with them all. Still, it doesn’t make the pill any easier to swallow, especially when the feedback loop can last days.</p>
+
+<p>This time, the app rejection was due to Plegr not having a means of allowing users to delete their accounts from within the app. While there has always been a means to delete a Plegr account externally, this no longer cuts it for Apple. I decided that I was going to stay up for however long it took to add this feature to the app, even if it meant staying up until sunrise. I didn’t want this looming over my head for the remainder of the weekend, or bleeding into the coming work week.</p>
+
+<p>Fortunately, as it turns out, it was a trivial addition.</p>
+
+<h2 id="a-pleasant-surprise">A Pleasant Surprise</h2>
+
+<p>As a natural first step, I began by looking through <a href="https://docs.amplify.aws/lib/auth/delete_user/q/platform/js/" target="_blank">AWS Amplify’s JavaScript documentation</a>, and discovered that calling the <code class="language-plaintext highlighter-rouge">Auth.deleteUser()</code> would suffice, so long as a valid auth token was present. Surely, the settings page would serve as a host for this feature, since the settings page is available only to authenticated users. My implementation looked something like this:</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">deleteAccount</span> <span class="o">=</span> <span class="k">async</span><span class="p">():</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="k">void</span><span class="o">&gt;</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span> <span class="na">loading</span><span class="p">:</span> <span class="kc">true</span> <span class="p">})</span>
+
+  <span class="k">try</span> <span class="p">{</span>
+    <span class="k">await</span> <span class="nx">Auth</span><span class="p">.</span><span class="nx">deleteUser</span><span class="p">()</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">navigation</span><span class="p">.</span><span class="nx">navigate</span><span class="p">(</span><span class="nx">Page</span><span class="p">.</span><span class="nx">LOGIN</span><span class="p">)</span>
+  <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+    <span class="p">...</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Next, within the view logic for the settings page, I created a section for destructive actions, and added a button to call the <code class="language-plaintext highlighter-rouge">deleteUser</code> method:</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">Text</span> <span class="nx">style</span><span class="o">=</span><span class="p">{</span> <span class="nx">style</span><span class="p">.</span><span class="nx">headerTextBold</span> <span class="p">}</span><span class="o">&gt;</span><span class="nx">Danger</span> <span class="nx">Zone</span><span class="o">&lt;</span><span class="sr">/Text</span><span class="err">&gt;
+</span><span class="o">&lt;</span><span class="nx">PlegrButton</span>
+  <span class="nx">colorScheme</span><span class="o">=</span><span class="dl">"</span><span class="s2">red</span><span class="dl">"</span>
+  <span class="nx">disabled</span><span class="o">=</span><span class="p">{</span> <span class="kc">false</span> <span class="p">}</span>
+  <span class="nx">onPress</span><span class="o">=</span><span class="p">{</span> <span class="p">...</span> <span class="p">}</span>
+  <span class="nx">text</span><span class="o">=</span><span class="dl">"</span><span class="s2">Delete Account</span><span class="dl">"</span>
+<span class="o">/&gt;</span>
+</code></pre></div></div>
+
+<p>When taking a destructive action, however, it makes sense to issue some kind of warning to the user. Especially in the case of account deletion. A simple alert will do:</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">confirmDeleteAccount</span> <span class="o">=</span> <span class="k">async</span> <span class="p">():</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="k">void</span><span class="o">&gt;</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">Alert</span><span class="p">.</span><span class="nx">alert</span><span class="p">(</span>
+    <span class="dl">"</span><span class="s2">Delete Plegr Account?</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">Are you sure you want to delete your account? This action is </span><span class="dl">"</span>
+    <span class="o">+</span> <span class="dl">"</span><span class="s2">PERMANENT, and your account and data will be irrecoverable.</span><span class="dl">"</span><span class="p">,</span>
+    <span class="p">[</span>
+      <span class="p">{</span> <span class="na">text</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Cancel</span><span class="dl">"</span><span class="p">,</span> <span class="na">style</span><span class="p">:</span> <span class="dl">"</span><span class="s2">cancel</span><span class="dl">"</span> <span class="p">},</span>
+      <span class="p">{</span>
+        <span class="na">text</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Delete Account</span><span class="dl">"</span><span class="p">,</span>
+        <span class="na">onPress</span><span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">deleteAccount</span><span class="p">,</span>
+        <span class="na">style</span><span class="p">:</span> <span class="dl">"</span><span class="s2">destructive</span><span class="dl">"</span><span class="p">,</span>
+      <span class="p">},</span>
+    <span class="p">],</span>
+  <span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Lastly, I simply applied the <code class="language-plaintext highlighter-rouge">onPress={ this.confirmDeleteAccount }</code> prop to the <code class="language-plaintext highlighter-rouge">PlegrButton</code> component, and I was ready to test. Everything tested out perfectly on the first go-around, without any need for revision!</p>
+
+<h2 id="what-about-the-api-data">What About the API Data?</h2>
+
+<p>Since Plegr uses AWS Cognito for user registration and authentication, I do not store any email addresses in the database. Plegr’s API grabs a user’s UUID to map it to session and location data. Once an account is deleted, the data is effectively dissociated. If a user were to register again using the same email address, their new account would be issued a new UUID, and therefore none of the user’s old data is retrievable.</p>
+
+<p>A user may still request that session and location data be deleted after the fact, and I see no practical reason to keep session and location data for an account that has been deleted. Eventually, I can add some full-stack logic to make this happen. But, for the sake of getting Plegr’s updates published to the App Store, this was sufficient.</p>
+
+<p>All said and done, I was finished adding the feature within 30 minutes, to include submitting the new build to the App Store. No unreasonably late night necessary! To top it all off, Plegr’s update was approved and published before I woke up on Saturday morning!</p>
+
+                </aside>
+                <aside>
+                    <h2 class="gray">Post Category</h2>
+                    <a
+                        class="button-category-tag"
+                        href="/categories/dev"
+                    >
+                        Dev
+                    </a>
+                    <h2 class="gray">Post Tags</h2>
+                    
+                        <a
+                            class="button-category-tag"
+                            href="/tags/aws%20amplify"
+                        >
+                            Aws amplify
+                        </a>
+                    
+                        <a
+                            class="button-category-tag"
+                            href="/tags/aws%20cognito"
+                        >
+                            Aws cognito
+                        </a>
+                    
+                        <a
+                            class="button-category-tag"
+                            href="/tags/expo"
+                        >
+                            Expo
+                        </a>
+                    
+                        <a
+                            class="button-category-tag"
+                            href="/tags/javascript"
+                        >
+                            Javascript
+                        </a>
+                    
+                        <a
+                            class="button-category-tag"
+                            href="/tags/plegr"
+                        >
+                            Plegr
+                        </a>
+                    
+                        <a
+                            class="button-category-tag"
+                            href="/tags/react%20native"
+                        >
+                            React native
+                        </a>
+                    
+                        <a
+                            class="button-category-tag"
+                            href="/tags/typescript"
+                        >
+                            Typescript
+                        </a>
+                    
+                </aside>
+            </section>
+        </section>
+        <footer>
+    <nav id="footer">
+        <aside>
+            <a href="/">Home</a>
+            <a href="/blog">Blog</a>
+            <a href="/#about">About</a>
+        </aside>
+        <aside>
+            <a
+                href="https://github.com/cmoncur"
+                target="_blank"
+            >
+                GitHub
+            </a>
+            <a
+                href="https://www.youtube.com/channel/UCJjVE_IAwBSthzP4l7ouA5g"
+                target="_blank"
+            >
+                YouTube
+            </a>
+            <a
+                href="https://www.twitch.tv/crafttheory"
+                target="_blank"
+            >
+                Twitch
+            </a>
+        </aside>
+        <aside>
+            <a href="/categories">
+                Categories (1)
+            </a>
+            <a href="/tags">
+                Tags (11)
+            </a>
+            
+            <a href="/categories/dev">
+                Posts in Dev (3)
+            </a>
+            
+        </aside>
+    </nav>
+    <h6>Copyright &copy; 2022 Cody Moncur</h6>
+</footer>
+
+    </body>
+</html>
