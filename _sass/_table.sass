@@ -1,0 +1,25 @@
+@import "constants"
+
+table
+    display: block
+    margin: 1em 0
+    max-width: 100%
+    overflow-x: auto
+
+    tbody
+        color: $text-light-gray
+        font-family: "Open Sans", sans-serif
+        font-size: 1em
+
+    tbody tr:nth-child(odd)
+        background: $slate-gray-odd
+
+    td, th
+        padding: 0.5em 1em
+        white-space: nowrap
+
+    thead
+        background: $dark-gray
+        color: $text
+        font-family: "Bebas Neue", sans-serif
+        font-size: 1.2em
