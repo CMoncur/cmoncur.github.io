@@ -12,3 +12,6 @@ defaults:
       permalink: tags/:tag/
 
 destination: "docs"
+
+plugins:
+  - jemoji

@@ -1,7 +1,4 @@
 ---
-# Temporary
-featured: true
-
 # Global
 layout: blog
 title: "A \"Delete Account\" Feature in 30 Minutes"
