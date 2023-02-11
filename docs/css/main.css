@@ -62,7 +62,7 @@ a.post-title, a.post-title:link, a.post-title:active, a.post-title:visited { bor
 
 a.post-title:hover { text-decoration-line: underline; }
 
-a.button, a.button:link, a.button:active, a.button:visited { border: 1px solid #cccccc; border-radius: 4px; color: #cccccc; display: inline-block; font-family: "Bebas Neue", sans-serif; height: 2em; letter-spacing: 0.15em; padding: 0.5em 1em; text-decoration: none; transition: border 100ms, color 100ms; }
+a.button, a.button:link, a.button:active, a.button:visited { border: 1px solid #cccccc; border-radius: 4px; color: #cccccc; display: inline-block; font-family: "Bebas Neue", sans-serif; height: 2em; letter-spacing: 0.15em; margin: 0 0 0.5em 0; padding: 0.5em 1em; text-decoration: none; transition: border 100ms, color 100ms; }
 
 a.button:hover { border: 1px solid #ffffff; color: #ffffff; }
 
