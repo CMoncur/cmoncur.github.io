@@ -7,4 +7,6 @@ gem "jemoji"
 gem "webrick"
 
 # Resolutions
-gem "tzinfo", ">= 1.2.10"
+gem "activesupport", ">= 6.1.7.1"
+gem "nokogiri", ">= 1.13.9"
+gem "tzinfo", "~> 2.0"
